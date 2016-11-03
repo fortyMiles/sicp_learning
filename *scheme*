@@ -1,0 +1,6 @@
+Gambit v4.7.9
+
+> *** ERROR IN (console)@1.2 -- Unbound variable: compile
+1> *** ERROR IN (console)@11.9 -- Ill-placed 'define'
+1> *** WARNING -- defining global variable: mid-segment
+1> (lambda (x) (/ x 2) 3)

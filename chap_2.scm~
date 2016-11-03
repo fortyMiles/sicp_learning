@@ -1,0 +1,25 @@
+p(define (make-segment x y) (cons x y))
+(define (start-segment s) (car s))
+(define (end-segment s) (cdr s))
+(define (make-point x y) (cons x y))
+(define x-point car)
+(define y-point cdr)
+(define (mid-segment p1 p2)
+  (make-point (/ (+ (x-point p1) (x-point p2)) 2)
+	      (/ (+ (y-point p1) (y-point p2)) 2)
+	      )
+  )
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,161 @@
+Gambit v4.7.9
+
+> *** ERROR IN (console)@1.2 -- Unbound variable: compile
+1> *** ERROR IN (console)@11.9 -- Ill-placed 'define'
+1> *** WARNING -- defining global variable: mid-segment
+1> (lambda (x) (/ x 2) 3)
+#<procedure #2>
+1> (lambda (x) (/ x 2) 3)
+#<procedure #3>
+1> (lambda (x) (/ x 2) 3)
+#<procedure #4>
+1> ((lambda (x) (/ x 2) 3))
+*** ERROR IN (console)@33.1 -- Wrong number of arguments passed to procedure
+(#<procedure #5>)
+2> (lambda (x) (/ x 2) 3)
+#<procedure #6>
+2> (list 1 2 2)
+(1 2 2)
+2> (lambda (x) (/ x 2))
+#<procedure #7>
+2> ((lambda (x) (/ x 2)) 3)
+3/2
+2> *** WARNING -- defining global variable: list-ref
+2> (list-ref (list 1 2 3 4) 3)
+4
+2> *** WARNING -- defining global variable: length
+2> (length (list 1 2 3 4))
+*** ERROR IN length, (console)@48.13 -- Unbound variable: lenght
+3> *** WARNING -- defining global variable: length
+3> (length (list 1 2 3 4))
+4
+3> (append (list 1 2 3) (list 2 3 3))
+(1 2 3 2 3 3)
+3> (2)
+*** ERROR IN (console)@61.1 -- Operator is not a PROCEDURE
+(2)
+4> (define x 2)
+*** WARNING -- defining global variable: x
+4> (define x nil)
+*** WARNING -- defining global variable: x
+*** ERROR IN (console)@63.11 -- Unbound variable: nil
+5> (define x null)
+*** WARNING -- defining global variable: x
+*** ERROR IN (console)@64.11 -- Unbound variable: null
+6> (list 1 2 3)
+(1 2 3)
+6> (define L (list 1 2 3))
+*** WARNING -- defining global variable: l
+6> (cdr L)
+(2 3)
+6> (cdr (cdr L))
+(3)
+6> (cdr (cdr (cdr L)))
+()
+6> *** WARNING -- defining global variable: last-pair
+6> (last-pair L)
+(3)
+6> *** WARNING -- defining global variable: reverse
+6> (reverse L)
+((3) (3) 3)
+6> *** WARNING -- defining global variable: reverse
+6> (reverse L)
+((3) (3) 3)
+6> L
+(1 2 3)
+6> *** WARNING -- defining global variable: reverse
+6> (reverse L)
+(((3) 2) 1)
+6> *** WARNING -- defining global variable: reverse
+6> (reverse L)
+(((3) . 2) . 1)
+6> (list 2)
+(2)
+6> (car (list 2))
+2
+6> *** WARNING -- defining global variable: reverse
+6> (reverse L)
+((3 . 2) . 1)
+6> *** WARNING -- defining global variable: reverse
+6> (reverse L)
+((3 2) 1)
+6> *** WARNING -- defining global variable: reverse
+6> (reverse L)
+*** ERROR IN reverse, (console)@121.15 -- (Argument 1) LIST expected
+(append 3 2)
+7> *** WARNING -- defining global variable: reverse
+7> (reverse L)
+*** ERROR IN reverse, (console)@127.31 -- (Argument 1) PAIR expected
+(car 2)
+8> *** WARNING -- defining global variable: reverse
+8> (reverse L)
+(3 2)
+8> (list (list 1 2) 3)
+((1 2) 3)
+8> (list (list 1 2) (3))
+*** ERROR IN (console)@137.18 -- Operator is not a PROCEDURE
+(3)
+9> (append (list 1 2) 3)
+(1 2 . 3)
+9> (append (list 1 2) (3))
+*** ERROR IN (console)@139.20 -- Operator is not a PROCEDURE
+(3)
+10> (append (list 1 2) (list 3))
+(1 2 3)
+10> *** WARNING -- defining global variable: reverse
+10> (reverse L)
+(3 (2))
+10> *** WARNING -- defining global variable: reverse
+10> (reverse L)
+(3 (2))
+10> *** WARNING -- defining global variable: reverse
+10> (reverse L)
+*** ERROR IN reverse, (console)@156.13 -- (Argument 1) PAIR expected
+(car 3)
+11> *** WARNING -- defining global variable: reverse
+11> (reverse L)
+((3) (2))
+11> *** WARNING -- defining global variable: reverse
+11> (reverse L)
+(3 2)
+11> *** WARNING -- defining global variable: reverse
+11> (reverse L)
+(3 2)
+11> L
+(2 3)
+11> (car (list 1 2 3))
+1
+11> (cons (car (list 1 2 3)) '())
+(1)
+11> (remainder 12 2)
+0
+11> (even? 3)
+#f
+11> *** WARNING -- defining global variable: reverse
+*** ERROR IN (console)@185.3 -- Body must contain at least one expression
+11> *** WARNING -- defining global variable: reverse
+*** ERROR IN (console)@200.3 -- Body must contain at least one expression
+11> *** WARNING -- defining global variable: reverse
+*** ERROR IN (console)@216.3 -- Body must contain at least one expression
+11> *** WARNING -- defining global variable: reverse
+*** ERROR IN (console)@232.3 -- Body must contain at least one expression
+11> *** WARNING -- defining global variable: same-parity
+*** ERROR IN (console)@248.3 -- Body must contain at least one expression
+11> *** WARNING -- defining global variable: same-parity
+*** ERROR IN (console)@264.3 -- Body must contain at least one expression
+11> *** WARNING -- defining global variable: same-parity
+11> (same-parity (list 1 2 3 4 45 8))
+*** ERROR IN same-parity, (console)@280.19 -- (Argument 1) INTEGER expected
+(even? '(1 2 3 4 45 8))
+12> (same-parity 1 2 3 4 45 8)
+*** ERROR IN same-parity, (console)@282.4 -- Unbound variable: odds?
+13> (odds? 3)
+*** ERROR IN (console)@296.2 -- Unbound variable: odds?
+14> (odds 3)
+*** ERROR IN (console)@297.2 -- Unbound variable: odds
+15> (odd? 3)
+#t
+15> *** WARNING -- defining global variable: same-parity
+15> (same-parity 1 2 3 4 45 8)
+*** ERROR IN iter, (console)@307.27 -- Unbound variable: yes?
+16> 
