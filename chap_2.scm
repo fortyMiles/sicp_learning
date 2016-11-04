@@ -40,18 +40,33 @@
 ;; 2.18 reverse a list
 
 (define (reverse L)
-  (if (null? (cdr L))
-      L
+  (if (null? L)
+      '()
       (append (reverse (cdr L))
 	      (cons (car L) '())
 	      )
       ))
+
+(define (deep-reverse L)
+  (reverse (map reverse L))
+  )
+
+(define (deep-reverse-test L)
+  (map reverse L)
+  )
+
+(define (d-r-r L)
+  (if (not (pair? L))
+      L
+      (reverse (map d-r-r L)))
+  )
 
 ;; 2.20 same-parity
 
 (define (same-parity . items)
   (let ((yes? (if (even? (car items))
 		 even?
+(define (same-parity . items)
 		 odd?
 		 )))
     (define (iter items result)
@@ -66,3 +81,25 @@
   (iter (cdr items) (list (car items))))
   )
 
+
+(define (square-list items)
+  (if (null? items)
+      '()
+      (cons (* (car items) (car items)) (square-list (cdr items)))
+      )
+  )
+
+(define (square-list-with-map items)
+  (map (lambda (x) (* x x)) items)
+  )
+
+(define (count-leaves x)
+  (cond ((null? x) 0)
+	((not (pair? x) 1))
+	(else (+ (count-leaves (car x))
+		 (count-leaves (cdr x))
+		 ))
+	)
+  )
+
+  )
