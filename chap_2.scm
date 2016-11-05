@@ -103,3 +103,13 @@
   )
 
   )
+
+;; 2.28 refrign print the tree's leaves from left to right
+
+(define (refringe tree)
+  (cond ((null? tree) '())
+	((not (pair? tree)) (list tree))
+	(else (append (refringe (car tree)) (refringe (cdr tree))))
+  ))
+
+
