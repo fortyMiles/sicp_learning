@@ -112,4 +112,14 @@
 	(else (append (refringe (car tree)) (refringe (cdr tree))))
   ))
 
+;; 2.30
+
+(define (square-tree tree)
+  (map (lambda (sub-tree)
+	 (if (pair? sub-tree)
+	     (square-tree sub-tree)
+	     (* sub-tree sub-tree)
+	     )
+	 ) tree)
+  )
 
