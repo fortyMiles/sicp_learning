@@ -8,3 +8,15 @@ def deep_reverse(L):
         return L
     else:
         return reverse(map(deep_reverse, L))
+
+
+# get subsets
+
+def subsets(L):
+    if len(L) == 0:
+        return [[]]
+    else:
+        rest = subsets(L[1:])
+        return rest + map(lambda x: x + [L[0]], rest)
+
+
