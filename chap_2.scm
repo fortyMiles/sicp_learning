@@ -127,3 +127,11 @@
   (tree-map square tree)
   )
 
+(define (subsets s)
+  (if (null? s)
+      (list '())
+      (let ((rest (subsets (cdr s))))
+	(append rest (map (lambda (e)
+			    (cons (car s) e))
+			  rest))))
+  )
