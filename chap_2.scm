@@ -152,3 +152,50 @@
       (op (car sequence) (accumulate op initial (cdr sequence)))
       )
   )
+
+;; 2.33
+
+(define (map p sequence)
+  (accumulate (lambda (x y) (cons (p x) y)) '() sequence)
+  )
+;; accumulate is that define an operation, and the initial or firts element with this operation and the accumulated result of remained list
+
+(define (append seq1 seq2)
+  (accumulate cons seq2 seq1)
+  )
+
+(define (length sequence)
+  (accumulate (lambda (x y) (+ 1 y)) 0 sequence)
+  )
+
+;; horner-eval
+
+(define (horner-eval x coefficient-sequence)
+  (accumulate (lambda (this-coeff higher-terms)
+		(+ this-coeff (* x higher-terms)))
+	      0
+	      coefficient-sequence
+	      )
+  )
+
+;; count-leaves
+
+(define (count-leaves t)
+  (accumulate + 0 (map (lambda (x)
+			 (if (pair? x)
+			     (count-leaves x)
+			     1
+			     ))
+		       t))
+  )
+
+;; binary tree
+
+(define (make-tree entry left right) (list entry left right))
+
+(define (entry tree) (car tree))
+
+(define (left-branch tree) (cadr tree))
+
+(define (right-branch tree) (caddr tree))
+
